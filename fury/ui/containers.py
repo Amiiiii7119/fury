@@ -133,9 +133,11 @@ class Panel2D(UI):
         """
         actors = []
 
-        actors.extend(self.background.actors)
-        for border in self.borders.values():
-            actors.extend(border.actors)
+actors.extend(self.background.actors)
+
+if self.has_border:
+    for border in self.borders.values():
+        actors.extend(border.actors)
 
         return actors
 
