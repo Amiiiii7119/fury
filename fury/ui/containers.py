@@ -132,12 +132,11 @@ class Panel2D(UI):
             List of actors composing this UI component.
         """
         actors = []
+        actors.extend(self.background.actors)
 
-actors.extend(self.background.actors)
-
-if self.has_border:
-    for border in self.borders.values():
-        actors.extend(border.actors)
+        if self.has_border:
+            for border in self.borders.values():
+                actors.extend(border.actors)
 
         return actors
 
